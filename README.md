@@ -5,8 +5,11 @@ Link Heroku App : https://pbp-assignment-fahmi.herokuapp.com/katalog
 https://drive.google.com/file/d/1cMwqWUmwju5w1-vjYqd3etOm-BDXcot0/view?usp=sharing
 
 urls.py berperan sebagai routing terhadap permintaan yang masuk
+
 views.py berperan sebagai logika utama dari aplikasi yang akan melakukan pemrosesan terhadap permintaan yang masuk
+
 models.py berperan sebagai objek yang mendefinisikan entitas pada database beserta konfigurasinya
+
 berkas html di sini sebagai apa yang ditampilkan kepada user
 
 Alur permintaannya yaitu pertama permintaan yang masuk akan diproses melalui urls untuk diteruskan ke views yang didefinisikan untuk memproses permintaan tersebut. Apabila terdapat proses yang membutuhkan database, maka views akan memanggil query ke models dan database akan mengembalikan hasil query tersebut ke views. Setelah permintaan berhasil diproses, hasil proses tersebut akan dipetakan ke dalam html yang sudah didefinisikan sebelumnya, dan halaman html akan tersebut dikembalikan ke user sebagai respons.
