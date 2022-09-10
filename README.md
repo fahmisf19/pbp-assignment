@@ -3,7 +3,8 @@ Link Heroku App : https://pbp-assignment-fahmi.herokuapp.com/katalog
 **Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;**
 
 Bagan: 
-![Bagan](https://drive.google.com/file/d/1cMwqWUmwju5w1-vjYqd3etOm-BDXcot0/view?usp=sharing)
+
+![Bagan](https://drive.google.com/uc?export=view&id=1cMwqWUmwju5w1-vjYqd3etOm-BDXcot0)
 
 urls.py berperan sebagai routing terhadap permintaan yang masuk
 
