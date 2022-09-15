@@ -88,3 +88,22 @@ Karena virtual environment di sini berfungsi untuk memisahkan pengaturan, packag
 14. Menyalin API key dari akun Heroku
 15. Menambah variabel repository secret baru untuk melakukan deployment, dengan HEROKU_API_KEY dari API key yang tadi sudah disalin, dan HEROKU_API_NAME dari nama aplikasi Heroku yang sudah dibuat sebelumnya
 16. Membuka tab GitHub Actions dan jalankan kembali workflow yang gagal
+
+* Testing
+1. Meng-import beberapa library dari django dan meng-import function show_katalog pada tests.py
+                  
+         from django.test import SimpleTestCase
+         from django.urls import reverse, resolve
+         from katalog.views import show_katalog
+                  
+2. Menambahkan kode berikut untuk melakukan unit testing terhadap function show_katalog
+                           
+         class tests(SimpleTestCase):
+         
+             def test_show_katalog_url_resolves(self):
+             url = reverse('katalog:show_katalog')
+             self.assertEquals(resolve(url).func, show_katalog)
+             
+3. Menjalankan perintah berikut pada terminal untuk melakukan testing
+
+         python manage.py test katalog
