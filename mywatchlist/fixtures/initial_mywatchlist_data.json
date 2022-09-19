@@ -1,0 +1,112 @@
+[
+    {
+        "model":"mywatchlist.watchlistitem",
+        "pk":1,
+        "fields":{
+            "watched":"yes",
+            "title":"The VVitch",
+            "rating": "6.9",
+            "release_date": "October 15th 2015",
+            "review": "Black Phillip GOATED"
+        }
+},
+{
+    "model":"mywatchlist.watchlistitem",
+    "pk":2,
+    "fields":{
+        "watched":"yes",
+        "title":"The Wailing",
+        "rating": "7.4",
+        "release_date": "May 26th 2016",
+        "review": "Japanese man goes brrah"
+    }
+},
+{
+    "model":"mywatchlist.watchlistitem",
+    "pk":3,
+    "fields":{
+        "watched":"yes",
+        "title":"Hereditary",
+        "rating": "7.3",
+        "release_date": "June 27th 2018",
+        "review": "Hidden mom in the corner of the ceiling, brr"
+    }
+},
+{
+    "model":"mywatchlist.watchlistitem",
+    "pk":4,
+    "fields":{
+        "watched":"yes",
+        "title":"Midsommar",
+        "rating": "7.1",
+        "release_date": "September 7th 2019",
+        "review": "cry, cry, CRY"
+    }
+},
+{
+    "model":"mywatchlist.watchlistitem",
+    "pk":5,
+    "fields":{
+        "watched":"yes",
+        "title":"Us",
+        "rating": "6.8",
+        "release_date": "September 20th 2019",
+        "review": "Adelaide is not the real Adelaide. Whaa-?"
+    }
+},
+{
+    "model":"mywatchlist.watchlistitem",
+    "pk":6,
+    "fields":{
+        "watched":"yes",
+        "title":"Get Out",
+        "rating": "7.7",
+        "release_date": "March 29th 2017",
+        "review": "The twist tho-"
+    }
+},
+{
+    "model":"mywatchlist.watchlistitem",
+    "pk":7,
+    "fields":{
+        "watched":"yes",
+        "title":"X",
+        "rating": "6.6",
+        "release_date": "March 18th 2022",
+        "review": "BOLD horror movie"
+    }
+},
+{
+    "model":"mywatchlist.watchlistitem",
+    "pk":8,
+    "fields":{
+        "watched":"yes",
+        "title":"The Autopsy of Jane Doe",
+        "rating": "6.8",
+        "release_date": "December 26th 2016",
+        "review": "Making us feel that coroner is a cool-not cool job"
+    }
+},
+{
+    "model":"mywatchlist.watchlistitem",
+    "pk":9,
+    "fields":{
+        "watched":"yes",
+        "title":"Apollo 18",
+        "rating": "5.2",
+        "release_date": "September 2nd 2011",
+        "review": "Moon is not safe"
+    }
+},
+{
+    "model":"mywatchlist.watchlistitem",
+    "pk":10,
+    "fields":{
+        "watched":"yes",
+        "title":"Malignant",
+        "rating": "6.2",
+        "release_date": "October 31st 2021",
+        "review": "Great experimental movie"
+    }
+}
+]
