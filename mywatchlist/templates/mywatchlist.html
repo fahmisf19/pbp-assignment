@@ -1,17 +1,71 @@
+<style>
+
+  h1 {
+    color: #15aabf;
+    text-align: center;
+  }
+
+  .identity {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .content-table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 1.0em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .table-header {
+    background-color: #15aabf;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .content-table th,
+  .content-table td {
+    padding: 12px 15px;
+  }
+
+  .content-table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #15aabf;
+  }
+
+</style>
+
 {% extends 'base.html' %}
 
  {% block content %}
 
   <h1>Assignment 3 PBP/PBD</h1>
 
-  <h5>Name: </h5>
-  <p>Fahmi Sabila Firdaus</p>
+  <div class="identity">
+    <h5>Name: </h5>
+    <p>Fahmi Sabila Firdaus</p>
 
-  <h5>Student ID: </h5>
-  <p>2106751745</p>
+    <h5>Student ID: </h5>
+    <p>2106751745</p>
+  </div>
+  
 
-  <table>
-    <tr>
+  <table class="content-table">
+    <tr class="table-header">
       <th>Watched?</th>
       <th>Title</th>
       <th>Rating</th>
