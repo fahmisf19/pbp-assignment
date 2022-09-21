@@ -1,4 +1,4 @@
-tautan :
+Tautan :
 
 https://pbp-assignment-fahmi.herokuapp.com/mywatchlist/html/
 
@@ -28,7 +28,11 @@ Perbedaan antara XML dan HTML :
 - XML mendukung *namespace*, HTML tidak mendukung *namespace*.
 - XML tags *extensible*, HTML tags terbatas.
 
- Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+
+Data delivery digunakan dalam pengiriman data antar stack pada platform. Data delivery terdapat beberapa jenis, contohnya adalah JSON dan XML yang sudah dipelajari. Keduanya berguna untuk memuat informasi secara asinkron sehingga website menjadi lebih responsif dan dapat menangani aliran data dengan lebih mudah. Selain itu, bisa juga untuk mengatasi isu cross-domain saat bertukar data dari situs lain.
+ 
+Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
 1.  git clone repositori pada komputer, kemudian membuat virtual environment, dan menyalakan virtual environment tersebut, lalu menginstal semua dependencies yang ada pada requirements.txt
 
@@ -58,7 +62,7 @@ Perbedaan antara XML dan HTML :
 
 6.  Menjalankan perintah python manage.py migrate untuk menerapkan skema model yang telah dibuat ke dalam database Django lokal.
 
-7.  Membuat folder fixtures di dalam folder aplikasi mywatchlist dan buatlah sebuah berkas bernama initial_mywatchlist_data.json yang berisi kode berikut.
+7.  Membuat sebuah model mywatchlist dengan membuat folder fixtures di dalam folder aplikasi mywatchlist dan buatlah sebuah berkas bernama initial_mywatchlist_data.json yang berisi kode berikut.
 
         [
           {
@@ -175,7 +179,7 @@ Perbedaan antara XML dan HTML :
 
 8.  Menjalankan perintah python manage.py loaddata initial_mywatchlist_data.json untuk memasukkan data tersebut ke dalam database Django lokal.
 
-9.  Membuka views.py yang ada pada folder mywatchlist dan menambahkan kode berikut
+9.  Mengimplementasikan sebuah fitur untuk menyajikan data, dengan membuka views.py yang ada pada folder mywatchlist dan menambahkan kode berikut
 
         def show_mywatchlist(request):
             watchlist_movie = WatchlistItem.objects.all()
@@ -239,7 +243,7 @@ Perbedaan antara XML dan HTML :
           </table>
         {% endblock content %}
         
-11. Melakukan routing terhadap fungsi views yang telah dibuat sehingga nantinya halaman HTML dapat ditampilkan lewat browser, dengan menambahkan kode berikut pada urls.py.
+11. Melakukan routing terhadap fungsi views yang telah dibuat sehingga nantinya halaman HTML, JSON, dan XML dapat ditampilkan lewat browser, dengan menambahkan kode berikut pada urls.py.
 
         from django.urls import path
 
@@ -260,4 +264,60 @@ Perbedaan antara XML dan HTML :
         path('mywatchlist/', include('mywatchlist.urls')),
         ...
       
-13. 
+14. Melakukan unit testing untuk menguji bahwa URL dapat mengembalikan respon HTTP 200 OK, dengan menambahkan kode berikut pada tests.py aplikasi mywatchlist
+
+        from django.test import Client, TestCase
+        
+        class tests(TestCase):
+
+            def test_url_html(self):
+                response = Client().get('/mywatchlist/html/')
+                self.assertEqual(response.status_code, 200)
+
+            def test_url_xml(self):
+                response = Client().get('/mywatchlist/xml/')
+                self.assertEqual(response.status_code, 200)
+
+            def test_url_json(self):
+                response = Client().get('/mywatchlist/json/')
+                self.assertEqual(response.status_code, 200)
+
+
+13. Melakukan add, commit, dan push perubahan yang sudah dilakukan untuk menyimpannya ke dalam repositori GitHub pribadi. Aplikasi akan ter-deploy otomatis karena sebelumnya sudah melakukan deploy menggunakan repository tersebut.
+
+
+BONUS
+
+1. Untuk menampilkan pesan berdasarkan berapa film yang sudah ditonton adalah dengan menambahkan pada views.py aplikasi mywatchlist kode berikut
+
+         mes = ""
+         yes = 0
+         no = 0
+
+         for i in range(len(watchlist_movie)) :
+             if (watchlist_movie[i].watched == "yes") :
+                 yes += 1
+             else :
+                 no += 1
+
+         if (yes >= no) :
+             mes = "Selamat, kamu sudah banyak menonton!"
+         else :
+             mes = "Wah, kamu masih sedikit menonton!"
+             
+ 2. Kemudian menambahkan pada context kode berikut
+         
+         context = {
+         ...
+         'message' : mes
+         }
+         
+3. Pada mywatchlist.html tambahkan kode berikut untuk menampilkan message pada HTML
+
+        <input class="btn-report" type="button" value="Your Movie Report", onclick="showReport()"/>
+
+        <script>
+          function showReport () {
+            alert("{{message}}");
+          }
+        </script>
