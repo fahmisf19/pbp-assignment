@@ -69,7 +69,7 @@
     "model":"mywatchlist.watchlistitem",
     "pk":7,
     "fields":{
-        "watched":"yes",
+        "watched":"no",
         "title":"X",
         "rating": "3.3",
         "release_date": "March 18th 2022",
@@ -91,7 +91,7 @@
     "model":"mywatchlist.watchlistitem",
     "pk":9,
     "fields":{
-        "watched":"yes",
+        "watched":"no",
         "title":"Apollo 18",
         "rating": "2.6",
         "release_date": "September 2nd 2011",
@@ -102,7 +102,7 @@
     "model":"mywatchlist.watchlistitem",
     "pk":10,
     "fields":{
-        "watched":"yes",
+        "watched":"no",
         "title":"Malignant",
         "rating": "3.1",
         "release_date": "October 31st 2021",
