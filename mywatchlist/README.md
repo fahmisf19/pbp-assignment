@@ -174,13 +174,14 @@ Perbedaan antara XML dan HTML :
              ]
 
 8.  Menjalankan perintah python manage.py loaddata initial_mywatchlist_data.json untuk memasukkan data tersebut ke dalam database Django lokal.
+
 9.  Membuka views.py yang ada pada folder mywatchlist dan menambahkan kode berikut
 
         def show_mywatchlist(request):
             watchlist_movie = WatchlistItem.objects.all()
             context = {
                 'movie_list': watchlist_movie,
-                'nama': 'Kak Cinoy'
+                'nama': 'Fahmi Sabila Firdaus'
             }
             return render(request, "mywatchlist.html", context)
             
