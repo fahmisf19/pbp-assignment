@@ -45,14 +45,14 @@ Perbedaan antara XML dan HTML :
      
 4.  Membuka file models.py yang ada di folder wishlist dan menambahkan kode berikut
   
-      from django.db import models
+       from django.db import models
 
-      class WatchlistItem(models.Model):
-          watched = models.CharField(max_length=50)
-          title = models.CharField(max_length=225)
-          rating = models.FloatField()
-          release_date = models.TextField()
-          review = models.TextField()
+       class WatchlistItem(models.Model):
+           watched = models.CharField(max_length=50)
+           title = models.CharField(max_length=225)
+           rating = models.FloatField()
+           release_date = models.TextField()
+           review = models.TextField()
           
 5.  Menjalankan perintah python manage.py makemigrations untuk mempersiapkan migrasi skema model ke dalam database Django lokal.
 
@@ -174,3 +174,89 @@ Perbedaan antara XML dan HTML :
              ]
 
 8.  Menjalankan perintah python manage.py loaddata initial_mywatchlist_data.json untuk memasukkan data tersebut ke dalam database Django lokal.
+9.  Membuka views.py yang ada pada folder mywatchlist dan menambahkan kode berikut
+
+        def show_mywatchlist(request):
+            watchlist_movie = WatchlistItem.objects.all()
+            context = {
+                'movie_list': watchlist_movie,
+                'nama': 'Kak Cinoy'
+            }
+            return render(request, "mywatchlist.html", context)
+            
+         def show_mywatchlist_xml(request):
+             data = WatchlistItem.objects.all()
+             return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+
+         def show_mywatchlist_json(request):
+             data = WatchlistItem.objects.all()
+             return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+         def show_mywatchlist_data(request, id):
+             data = WatchlistItem.objects.filter(pk=id)
+             #  Jika JSON
+             return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+             #  Jika XML
+             # return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+            
+10. Membuat sebuah folder bernama templates di dalam folder aplikasi mywatchlist dan membuat sebuah berkas bernama mywatchlist.html. Lalu, menambahkan kode berikut
+
+        {% extends 'base.html' %}
+
+        {% block content %}
+
+         <h1>Assignment 3 PBP/PBD</h1>
+
+         <div class="identity">
+           <h5>Name: </h5>
+           <p>Fahmi Sabila Firdaus</p>
+
+           <h5>Student ID: </h5>
+           <p>2106751745</p>
+         </div>
+
+
+         <table class="content-table">
+           <tr class="table-header">
+             <th>Watched?</th>
+             <th>Title</th>
+             <th>Rating</th>
+             <th>Release date</th>
+             <th>Review</th>
+           </tr>
+           {% comment %} Add the data below this line {% endcomment %}
+           {% for movie in movie_list %}
+           <tr>
+               <th>{{movie.watched}}</th>
+               <th>{{movie.title}}</th>
+               <th>{{movie.rating}}</th>
+               <th>{{movie.release_date}}</th>
+               <th>{{movie.review}}</th>
+           </tr>
+        {% endfor %}
+          </table>
+        {% endblock content %}
+        
+11. Melakukan routing terhadap fungsi views yang telah dibuat sehingga nantinya halaman HTML dapat ditampilkan lewat browser, dengan menambahkan kode berikut pada urls.py.
+
+        from django.urls import path
+
+        from mywatchlist.views import show_mywatchlist, show_mywatchlist_xml, show_mywatchlist_json, show_mywatchlist_data
+
+        app_name = 'mywatchlist'
+
+        urlpatterns = [
+            path('html/', show_mywatchlist, name='show_mywatchlist'),
+            path('xml/', show_mywatchlist_xml, name='show_mywatchlist_xml'),
+            path('json/', show_mywatchlist_json, name='show_mywatchlist_json'),
+            path('json/<int:id>', show_mywatchlist_data, name='show_mywatchlist_data')
+        ]
+        
+12. Mendaftarkan aplikasi mywatchlist ke dalam urls.py yang ada pada folder project_django dengan menambahkan potongan kode berikut pada variabel urlpatterns.
+
+        ...
+        path('mywatchlist/', include('mywatchlist.urls')),
+        ...
+      
+13. 
