@@ -49,14 +49,14 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
      
 4.  Membuka file models.py yang ada di folder wishlist dan menambahkan kode berikut
   
-       from django.db import models
+        from django.db import models
 
-       class WatchlistItem(models.Model):
-           watched = models.CharField(max_length=50)
-           title = models.CharField(max_length=225)
-           rating = models.FloatField()
-           release_date = models.TextField()
-           review = models.TextField()
+        class WatchlistItem(models.Model):
+            watched = models.CharField(max_length=50)
+            title = models.CharField(max_length=225)
+            rating = models.FloatField()
+            release_date = models.TextField()
+            review = models.TextField()
           
 5.  Menjalankan perintah python manage.py makemigrations untuk mempersiapkan migrasi skema model ke dalam database Django lokal.
 
@@ -321,3 +321,9 @@ BONUS
             alert("{{message}}");
           }
         </script>
+
+![image](https://user-images.githubusercontent.com/73156219/191631120-52a47ef6-278c-4f58-9710-774611fc8476.png)
+
+![image](https://user-images.githubusercontent.com/73156219/191631210-11a3046b-3812-4afd-9d86-18fddb8dcd23.png)
+
+![image](https://user-images.githubusercontent.com/73156219/191631295-0243e49e-d617-4272-848a-6581c3a7a8cc.png)
