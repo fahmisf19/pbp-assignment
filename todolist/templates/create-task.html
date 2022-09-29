@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Create New Task</title>
+{% endblock meta %}
+
+{% block content %}
+
+<style>
+    form  { 
+        display: flex;   
+        justify-content: center;
+        align-items: center;   
+        gap: 10px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .btn-submit {
+        display: flex;
+        margin-left: auto;
+        margin-top: 20px;
+        letter-spacing: .02em;
+    }
+    
+    p     { display: table-row;  }
+    label { display: table-cell; }
+    input { display: table-cell; margin-top: 20px; margin-left: 10px;}
+    textarea { display: table-cell; margin-left: 10px; margin-top: 10px;}
+
+</style>
+
+<form  class="form-create-task" action="/todolist/add-task/" method = "POST">
+    {% csrf_token %}
+    <fieldset>
+        <p>
+            <label class="description-label">Title: </label>
+            <input type="text" name="title" required>
+        </p>
+        <p>
+            <label display>Description: </label>
+            <textarea name="description" class="description-input" cols="25" rows="10" required></textarea>
+        </p>
+        <input class="btn-submit" type="submit" value="Add Todo Item">
+    </fieldset>
+</form> 
+
+{% endblock content %}
