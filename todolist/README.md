@@ -1,4 +1,4 @@
-Tautan Heroku : https://pbp-assignment-fahmi.herokuapp.com/todolist
+Tautan Heroku : [Heroku-todolist](https://pbp-assignment-fahmi.herokuapp.com/todolist)
 
 **Apa kegunaan {% csrf_token %} pada elemen <form> ? 
 
