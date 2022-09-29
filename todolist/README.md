@@ -1,16 +1,16 @@
 Tautan Heroku : https://pbp-assignment-fahmi.herokuapp.com/todolist
 
-Apa kegunaan {% csrf_token %} pada elemen <form>? 
+**Apa kegunaan {% csrf_token %} pada elemen <form> ? 
 
-Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
+Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form> ?**
 
 csrf token merupakan salah satu cara untuk mencegah serangan *Cross-Site Request Forgery* (CSRF). CSRF adalah serangan yang memaksa akun dari pengguna website untuk melakukan tindakan yang tidak diinginkan pada aplikasi website tersebut, di mana pengguna sebelumnya sudah mengautentikasi diri mereka sendiri. Django memiliki tag {% csrf_token %} yang diimplementasikan untuk menghindari serangan CSRF tersebut. Caranya adalah menghasilkan token di sisi server saat merender halaman website, dan memastikan aplikasi website untuk terus memeriksa ulang token ini untuk setiap permintaan yang masuk. Jika permintaan yang masuk tidak memiliki token, maka permintaan tersebut tidak akan dieksekusi.
-
-Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})? Jelaskan secara gambaran besar bagaimana cara membuat <form> secara manual.
+**
+Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})? Jelaskan secara gambaran besar bagaimana cara membuat <form> secara manual.**
 
 Ya, kita bisa membuat elemen <form> secara manual, seperti yang sudah saya buat pada tugas ini. Hal tersebut bisa dilakukan dengan membuat format form secara manual pada html, dengan <label> sebagai judul dari input yang dimasukkan, dan <input> sebagai tempat pengguna meng-input pada form. Lalu, agar form tetap rapi, bisa diformat menggunakan <style>. Selain generator {{ form.as_table }} yang merender form sebagai tabel, ada juga {{ form.as_p }} yang merender form sebagai paragraph dan {{ form.as_ul }} yang merender form sebagai list.
 
-Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
+**Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.**
 
 1.  User memasukkan data pada create-task.html dan menekan button submit.
 
@@ -26,7 +26,7 @@ Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML
 
 7.  Ketika sudah selesai, halaman akan di-redirect ke todolist.html, dengan ditambah todolist baru yang sudah tersimpan pada context rendering html.
 
-Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+**Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.**
 
 1.	Membuat sebuah django-app bernama todolist dengan perintah python manage.py startapp todolist
 
