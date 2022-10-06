@@ -13,6 +13,11 @@ from todolist.models import ToDoList
 def show_todolist(request):
     todolist_items = ToDoList.objects.filter(user=request.user)
 
+    for i in range(len(todolist_items)) :
+        if (todolist_items[i].is_finished == True) :
+            todolist_items[i].finish = "Finished"
+        elif (todolist_items[i].is_finished == False):
+            todolist_items[i].finish = "Not finished"
     context = {
         'todolist': todolist_items,
     }

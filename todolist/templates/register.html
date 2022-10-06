@@ -6,29 +6,55 @@
 
 {% block content %}  
 
-<div class = "login">
-    
-    <h1>Formulir Registrasi</h1>  
+<section class="vh-100" style="background-color: #15aabf;">
+    <div class="container-fluid py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-10 col-md-8 col-lg-6 col-xl-4">
+                <div class="card bg-light text-black d-flex justify-content-center" style="border-radius: 1rem; padding: 20px;">
+                    <h2 class="d-flex justify-content-center">Formulir Registrasi</h2>
+                
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="id_username">Username</label> 
+                            <input type="text" id="id_username" maxlength="150" name="username" placeholder="150 characters or fewer. Letters, digits and @/./+/-/_ only" class="form-control" required>
+                            <!-- <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span> -->
+                        </div>
+                
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="id_password1">Password</label> 
+                            
+                            <input type="password" id="id_password1" name="password1" placeholder="Enter Password" class="form-control" autocomplete="new-password" required>
+                            <p style="font-size: 12px; margin-bottom: 0;">Your password can’t be too similar to your other personal information.</p>
+                            <p style="font-size: 12px; margin-bottom: 0;">Your password must contain at least 8 characters.</p>
+                            <p style="font-size: 12px; margin-bottom: 0;">Your password can’t be a commonly used password.</p>
+                            <p style="font-size: 12px; margin-bottom: 0;">Your password can’t be entirely numeric.</p>
+                        </div>
 
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
-        </form>
+                        <div class="form-outline mb-4" >
+                            <label class="form-label" for="id_password2">Password Confirmation</label> 
+                            <input type="password" id="id_password2" name="password2" placeholder="Enter the same password as before, for verification" class="form-control" autocomplete="new-password" required>                        </div>
+                
+                        <div class="row d-flex justify-content-center align-content-center">
+                            <input class="btn btn-primary btn-block" style="width: 40%; margin-top: 1.5rem; margin-bottom: 0;" type="submit" name="submit" value="Daftar">
+                        </div>
+                    </form>
+                
+                    <div class="d-flex justify-content-center align-content-center">
+                        {% if messages %}  
+                            <ul>   
+                                {% for message in messages %}  
+                                    <li>{{ message }}</li>  
+                                    {% endfor %}  
+                            </ul>   
+                        {% endif %} 
+                    </div>
+                        
 
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
-
-</div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock content %}

@@ -6,40 +6,48 @@
 
 {% block content %}
 
-<div class = "login">
+<section class="vh-100" style="background-color: #15aabf;">
+    <div class="container-fluid py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-9 col-md-7 col-lg-5 col-lg-6 col-xl-3">
+                <div class="card bg-light text-black d-flex justify-content-center" style="border-radius: 1rem; padding: 20px; height: 450px;">
+                    <h2 class="d-flex justify-content-center">Login</h2>
+                
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="username-login-form">Username</label> 
+                            <input type="text" id="username-login-form" name="username" placeholder="Enter Your Username Here" class="form-control">
+                        
+                        </div>
+                
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="password-login-form">Password</label> 
+                            <input type="password" id="password-login-form" name="password" placeholder="Enter Your Password Here" class="form-control">
+                        
+                        </div>
+                
+                        <div class="row d-flex justify-content-center align-content-center">
+                            <input class="btn btn-primary btn-block mb-4" style="width: 50%;" type="submit" value="Login">
+                        </div>
+                    </form>
+                
+                    <div class="d-flex justify-content-center align-content-center" style="height: 50px;">
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p>{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}     
+                    </div>
+                        
+                    <div class="d-flex justify-content-center align-content-center">
+                        <p class="mb-0"> Belum mempunyai akun? <a href="{% url 'todolist:register' %}" style="text-decoration: none;">Buat Akun</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <h1>Login</h1>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-
-</div>
 
 {% endblock content %}
