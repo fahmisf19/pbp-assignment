@@ -137,73 +137,73 @@ Kekurangan :
 
 *Jelaskan tipe-tipe CSS selector yang kamu ketahui.*
 
--   Selector Tag
+1.  Selector Tag
 Selector Tag disbut juga Type Selector. Selector ini akan memilih elemen berdasarkan nama tag.
 
-    p {
-        color: blue;
-    }   
+            p {
+                color: blue;
+            }   
 
 Artinya: Pilih semua elemen tag p lalu atur warna teksnya menjadi biru.
 
--   Selector Class
+2.  Selector Class
 Selector class adalah selector yang memilih elemen berdasarkan nama class yang diberikan. Selector class dibuat dengan tanda titik di depannya.
 
-    .title {
-    color: #15aabf;
-    margin-left: 75px;
-    font-size: 32px;
-    }
+            .title {
+            color: #15aabf;
+            margin-left: 75px;
+            font-size: 32px;
+            }
 
 Artinya: Hanya elemen yang mempunyai class title yang akan terganti *style*-nya.
 
--   Selector ID
+3.  Selector ID
 Selector ID hampir sama dengan class. Bedanya, ID bersifat unik. Hanya boleh digunakan oleh satu elemen saja. Selector ID ditandai dengan tanda pagar (#) di depannya.
 
-    #header {
-        color: white;
-        height: 100px;
-        padding: 50px;
-    }
+            #header {
+                color: white;
+                height: 100px;
+                padding: 50px;
+            }
 Artinya: Hanya elemen yang mempunyai id header yang akan terganti *style*-nya.
 
--   Selector Atribut
+4.  Selector Atribut
 Selector atribut adalah selector yang memilik elemen berdasarkan atribut. Selector ini hampir sama seperti selector Tag.
 
-    input[type=text] {
-        background: none;
-        color: cyan;
-        padding: 10px;
-    }
+            input[type=text] {
+                background: none;
+                color: cyan;
+                padding: 10px;
+            }
 
 Aritnya: Semua elemen yang memiliki tag input dan memiliki atribut type=text yang akan terganti terganti *style*-nya.
 
--   Selector Universal
+5.  Selector Universal
 Selector universal adalah selector yang digunakan untuk menyeleksi semua elemen pada jangkaua (scope) tertentu. Selector universal bisanya digunakan untuk me-reset CSS. Karena, paada halaman HTML, ada beberapa CSS bawaan browser seperti padding dan margin pada elemen tertentu.Reset bertujuan untuk menghilangkan padding dan margin tersebut.
 
-    * {
-        border: 1px solid grey;
-    }
+            * {
+                border: 1px solid grey;
+            }
 
 Artinya: Semua elemen akan memiliki garis solid dengan ukuran 1px dan berwarna grey.
 
--   Pseudo Selector
+6.  Pseudo Selector
 Pseudo selector adalah selector untuk memilih elemen semu seperti state pada elemen, elemen before dan after, elemen ganjil, dan sebagainya.
 
 Ada dua macam pseudo selector :
 1.  *pseudo-class*
 Pseudo-class adalah selector untuk memilih state pada elemen. Contohnya seperti elemen saat diklik, saat fokus, saat disentuh, dan lain sebagainya.
 
-    selector:pseudo-class {
-    /* definisi properti di sini*/
-    }
+            selector:pseudo-class {
+            /* definisi properti di sini*/
+            }
 
 2.  *pseudo-element*
 Pseudo-element adalah selector untuk memilih elemen semu. Elemen semu yang dimaksud di sini adalah elemen yang seolah-olah kita tambahkan di HTML.
 
-    p::first-line {
-        color: magenta;
-    }
+            p::first-line {
+                color: magenta;
+            }
 
 Artinya: hanya baris pertama yang ada pada p yang akan terganti *style*-nya.
 
