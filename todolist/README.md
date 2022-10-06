@@ -1,6 +1,6 @@
 Tautan Heroku : [Heroku-todolist](https://pbp-assignment-fahmi.herokuapp.com/todolist)
 
-Tugas 4 :
+**Tugas 4 :**
 
 **Apa kegunaan {% csrf_token %} pada elemen form ? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen form ?**
 
@@ -75,11 +75,11 @@ Ya, kita bisa membuat elemen <form> secara manual, seperti yang sudah saya buat 
 23. Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku, untuk memastikan task yang dibuat berjalan dengan semestinya pada masing-masing akun.
 
 
-Tugas 5
+**Tugas 5**
 
 *Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?*
 
-Internal CSS adalah kode CSS yang ditulis dalam tag style dan kode HTML yang ditulis di bagian header file HTML. 
+1. Internal CSS adalah kode CSS yang ditulis dalam tag style dan kode HTML yang ditulis di bagian header file HTML. 
 
 Kelebihan :
 -   Perubahan Internal CSS hanya berlaku di satu halaman saja. 
@@ -90,7 +90,7 @@ Kekurangan :
 -   Tidak efisien jika unutk menggunakan CSS yang sama dalam banyak file. 
 -   Performa web jadi lambat, karena CSS yang berbeda-beda dapat mengakibatkan loading ulang  setiap berganti halaman website. 
 
-External CSS adalah kode CSS yang ditulis terpisah dari kode HTML. External CSS ditulis di sebuah file khusus menggunakan ekstensi .css. File external CSS umumnya diletakkan setelah bagian tag head di halaman. 
+2. External CSS adalah kode CSS yang ditulis terpisah dari kode HTML. External CSS ditulis di sebuah file khusus menggunakan ekstensi .css. File external CSS umumnya diletakkan setelah bagian tag head di halaman. 
 
 Kelebihan :
 -   Ukuran halaman jadi lebih kecil dan struktur HTML menjadi lebih rapi. 
@@ -100,7 +100,7 @@ Kelebihan :
 Kekurangan :
 -   Ketika file CSS gagal dipanggil oleh file HTML, tampilan website akan terlihat berantakan. Salah satu sebabnya adalah koneksi internet yang lambat. 
 
-Inline CSS adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Setiap elemen HMTL mempunyai atribut style. Di situlah inline CSS ditulis. Metode ini dinilai tidak efisien karena setiap tag HTML harus memiliki style sendiri-sendiri. Pengguna bisa mendapatkan kesulitan dalam mengatur website jika hanya mengandalkan Inline CSS. 
+3. Inline CSS adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Setiap elemen HMTL mempunyai atribut style. Di situlah inline CSS ditulis. Metode ini dinilai tidak efisien karena setiap tag HTML harus memiliki style sendiri-sendiri. Pengguna bisa mendapatkan kesulitan dalam mengatur website jika hanya mengandalkan Inline CSS. 
 
 Kelebihan :
 -   Cukup membantu ketika hanya ingin menguji dan melihat perubahan pada satu elemen. 
@@ -137,74 +137,81 @@ Kekurangan :
 
 *Jelaskan tipe-tipe CSS selector yang kamu ketahui.*
 
--   Selector Tag
+1. Selector Tag
+
 Selector Tag disbut juga Type Selector. Selector ini akan memilih elemen berdasarkan nama tag.
 
-    p {
-        color: blue;
-    }   
+            p {
+                color: blue;
+            }   
+            Artinya: Pilih semua elemen tag p lalu atur warna teksnya menjadi biru.
 
-Artinya: Pilih semua elemen tag p lalu atur warna teksnya menjadi biru.
+2. Selector Class
 
--   Selector Class
 Selector class adalah selector yang memilih elemen berdasarkan nama class yang diberikan. Selector class dibuat dengan tanda titik di depannya.
 
-    .title {
-    color: #15aabf;
-    margin-left: 75px;
-    font-size: 32px;
-    }
+            .title {
+            color: #15aabf;
+            margin-left: 75px;
+            font-size: 32px;
+            }
+            Artinya: Hanya elemen yang mempunyai class title yang akan terganti *style*-nya.
 
-Artinya: Hanya elemen yang mempunyai class title yang akan terganti *style*-nya.
+3. Selector ID
 
--   Selector ID
 Selector ID hampir sama dengan class. Bedanya, ID bersifat unik. Hanya boleh digunakan oleh satu elemen saja. Selector ID ditandai dengan tanda pagar (#) di depannya.
 
-    #header {
-        color: white;
-        height: 100px;
-        padding: 50px;
-    }
-Artinya: Hanya elemen yang mempunyai id header yang akan terganti *style*-nya.
+            #header {
+                color: white;
+                height: 100px;
+                padding: 50px;
+            }
+            Artinya: Hanya elemen yang mempunyai id header yang akan terganti *style*-nya.
 
--   Selector Atribut
+4. Selector Atribut
+
 Selector atribut adalah selector yang memilik elemen berdasarkan atribut. Selector ini hampir sama seperti selector Tag.
 
-    input[type=text] {
-        background: none;
-        color: cyan;
-        padding: 10px;
-    }
+            input[type=text] {
+                background: none;
+                color: cyan;
+                padding: 10px;
+            }
+            Aritnya: Semua elemen yang memiliki tag input dan memiliki atribut type=text yang akan terganti terganti *style*-nya.
 
-Aritnya: Semua elemen yang memiliki tag input dan memiliki atribut type=text yang akan terganti terganti *style*-nya.
+5. Selector Universal
 
--   Selector Universal
 Selector universal adalah selector yang digunakan untuk menyeleksi semua elemen pada jangkaua (scope) tertentu. Selector universal bisanya digunakan untuk me-reset CSS. Karena, paada halaman HTML, ada beberapa CSS bawaan browser seperti padding dan margin pada elemen tertentu.Reset bertujuan untuk menghilangkan padding dan margin tersebut.
 
-    * {
-        border: 1px solid grey;
-    }
+            * {
+                border: 1px solid grey;
+            }
+            Artinya: Semua elemen akan memiliki garis solid dengan ukuran 1px dan berwarna grey.
 
-Artinya: Semua elemen akan memiliki garis solid dengan ukuran 1px dan berwarna grey.
-
--   Pseudo Selector
+6. Pseudo Selector
 Pseudo selector adalah selector untuk memilih elemen semu seperti state pada elemen, elemen before dan after, elemen ganjil, dan sebagainya.
 
 Ada dua macam pseudo selector :
-1.  *pseudo-class*
+1. *pseudo-class*
+
 Pseudo-class adalah selector untuk memilih state pada elemen. Contohnya seperti elemen saat diklik, saat fokus, saat disentuh, dan lain sebagainya.
 
-    selector:pseudo-class {
-    /* definisi properti di sini*/
-    }
+            selector:pseudo-class {
+            /* definisi properti di sini*/
+            }
 
-2.  *pseudo-element*
+2. *pseudo-element*
+
 Pseudo-element adalah selector untuk memilih elemen semu. Elemen semu yang dimaksud di sini adalah elemen yang seolah-olah kita tambahkan di HTML.
 
-    p::first-line {
-        color: magenta;
-    }
-
-Artinya: hanya baris pertama yang ada pada p yang akan terganti *style*-nya.
+            p::first-line {
+                color: magenta;
+            }
+            Artinya: hanya baris pertama yang ada pada p yang akan terganti *style*-nya.
 
 *Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.*
+
+1. Menghubungkan style yang ada di base.html dengan bootstrap link.
+2. Menerapkan card class bootstrap untuk mengubah task dari tabel menjadi cards.
+3. Untuk menjadi responsive menggunakan `container` kemudian menerapkan flex dan kustomisasi sesuai ukuran media.
+4. Pada bonus, menggunakan *pseudo class* seperti `:hover` pada css.
