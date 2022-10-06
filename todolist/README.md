@@ -1,6 +1,6 @@
 Tautan Heroku : [Heroku-todolist](https://pbp-assignment-fahmi.herokuapp.com/todolist)
 
-Tugas 4 :
+**Tugas 4 :**
 
 **Apa kegunaan {% csrf_token %} pada elemen form ? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen form ?**
 
@@ -75,7 +75,7 @@ Ya, kita bisa membuat elemen <form> secara manual, seperti yang sudah saya buat 
 23. Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku, untuk memastikan task yang dibuat berjalan dengan semestinya pada masing-masing akun.
 
 
-Tugas 5
+**Tugas 5**
 
 *Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?*
 
@@ -143,8 +143,7 @@ Selector Tag disbut juga Type Selector. Selector ini akan memilih elemen berdasa
             p {
                 color: blue;
             }   
-
-Artinya: Pilih semua elemen tag p lalu atur warna teksnya menjadi biru.
+            Artinya: Pilih semua elemen tag p lalu atur warna teksnya menjadi biru.
 
 2.  Selector Class
 Selector class adalah selector yang memilih elemen berdasarkan nama class yang diberikan. Selector class dibuat dengan tanda titik di depannya.
@@ -154,8 +153,7 @@ Selector class adalah selector yang memilih elemen berdasarkan nama class yang d
             margin-left: 75px;
             font-size: 32px;
             }
-
-Artinya: Hanya elemen yang mempunyai class title yang akan terganti *style*-nya.
+            Artinya: Hanya elemen yang mempunyai class title yang akan terganti *style*-nya.
 
 3.  Selector ID
 Selector ID hampir sama dengan class. Bedanya, ID bersifat unik. Hanya boleh digunakan oleh satu elemen saja. Selector ID ditandai dengan tanda pagar (#) di depannya.
@@ -165,7 +163,7 @@ Selector ID hampir sama dengan class. Bedanya, ID bersifat unik. Hanya boleh dig
                 height: 100px;
                 padding: 50px;
             }
-Artinya: Hanya elemen yang mempunyai id header yang akan terganti *style*-nya.
+            Artinya: Hanya elemen yang mempunyai id header yang akan terganti *style*-nya.
 
 4.  Selector Atribut
 Selector atribut adalah selector yang memilik elemen berdasarkan atribut. Selector ini hampir sama seperti selector Tag.
@@ -175,8 +173,7 @@ Selector atribut adalah selector yang memilik elemen berdasarkan atribut. Select
                 color: cyan;
                 padding: 10px;
             }
-
-Aritnya: Semua elemen yang memiliki tag input dan memiliki atribut type=text yang akan terganti terganti *style*-nya.
+            Aritnya: Semua elemen yang memiliki tag input dan memiliki atribut type=text yang akan terganti terganti *style*-nya.
 
 5.  Selector Universal
 Selector universal adalah selector yang digunakan untuk menyeleksi semua elemen pada jangkaua (scope) tertentu. Selector universal bisanya digunakan untuk me-reset CSS. Karena, paada halaman HTML, ada beberapa CSS bawaan browser seperti padding dan margin pada elemen tertentu.Reset bertujuan untuk menghilangkan padding dan margin tersebut.
@@ -184,8 +181,7 @@ Selector universal adalah selector yang digunakan untuk menyeleksi semua elemen 
             * {
                 border: 1px solid grey;
             }
-
-Artinya: Semua elemen akan memiliki garis solid dengan ukuran 1px dan berwarna grey.
+            Artinya: Semua elemen akan memiliki garis solid dengan ukuran 1px dan berwarna grey.
 
 6.  Pseudo Selector
 Pseudo selector adalah selector untuk memilih elemen semu seperti state pada elemen, elemen before dan after, elemen ganjil, dan sebagainya.
@@ -204,7 +200,6 @@ Pseudo-element adalah selector untuk memilih elemen semu. Elemen semu yang dimak
             p::first-line {
                 color: magenta;
             }
-
-Artinya: hanya baris pertama yang ada pada p yang akan terganti *style*-nya.
+            Artinya: hanya baris pertama yang ada pada p yang akan terganti *style*-nya.
 
 *Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.*
