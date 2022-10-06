@@ -79,7 +79,7 @@ Ya, kita bisa membuat elemen <form> secara manual, seperti yang sudah saya buat 
 
 *Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?*
 
-Internal CSS adalah kode CSS yang ditulis dalam tag style dan kode HTML yang ditulis di bagian header file HTML. 
+1.          Internal CSS adalah kode CSS yang ditulis dalam tag style dan kode HTML yang ditulis di bagian header file HTML. 
 
 Kelebihan :
 -   Perubahan Internal CSS hanya berlaku di satu halaman saja. 
@@ -90,7 +90,7 @@ Kekurangan :
 -   Tidak efisien jika unutk menggunakan CSS yang sama dalam banyak file. 
 -   Performa web jadi lambat, karena CSS yang berbeda-beda dapat mengakibatkan loading ulang  setiap berganti halaman website. 
 
-External CSS adalah kode CSS yang ditulis terpisah dari kode HTML. External CSS ditulis di sebuah file khusus menggunakan ekstensi .css. File external CSS umumnya diletakkan setelah bagian tag head di halaman. 
+2.          External CSS adalah kode CSS yang ditulis terpisah dari kode HTML. External CSS ditulis di sebuah file khusus menggunakan ekstensi .css. File external CSS umumnya diletakkan setelah bagian tag head di halaman. 
 
 Kelebihan :
 -   Ukuran halaman jadi lebih kecil dan struktur HTML menjadi lebih rapi. 
@@ -100,7 +100,7 @@ Kelebihan :
 Kekurangan :
 -   Ketika file CSS gagal dipanggil oleh file HTML, tampilan website akan terlihat berantakan. Salah satu sebabnya adalah koneksi internet yang lambat. 
 
-Inline CSS adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Setiap elemen HMTL mempunyai atribut style. Di situlah inline CSS ditulis. Metode ini dinilai tidak efisien karena setiap tag HTML harus memiliki style sendiri-sendiri. Pengguna bisa mendapatkan kesulitan dalam mengatur website jika hanya mengandalkan Inline CSS. 
+3.          Inline CSS adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Setiap elemen HMTL mempunyai atribut style. Di situlah inline CSS ditulis. Metode ini dinilai tidak efisien karena setiap tag HTML harus memiliki style sendiri-sendiri. Pengguna bisa mendapatkan kesulitan dalam mengatur website jika hanya mengandalkan Inline CSS. 
 
 Kelebihan :
 -   Cukup membantu ketika hanya ingin menguji dan melihat perubahan pada satu elemen. 
