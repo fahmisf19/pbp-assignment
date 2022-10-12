@@ -1,10 +1,12 @@
+import http
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core import serializers
 from django.urls import reverse
 from todolist.models import ToDoList
 
@@ -81,3 +83,25 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('todolist:login'))
     response.delete_cookie('last_login')
     return response
+
+@login_required(login_url="/todolist/login")
+def show_todolist_json(request):
+    tasks = ToDoList.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', tasks), content_type='application/json')
+
+def add_json_task(request):
+    if request.method == "POST":
+        x = request.POST.get('title')
+        y = request.POST.get('description')
+        new_item = ToDoList.objects.create(user=request.user, date = str(datetime.datetime.now().date()), title= x, description = y)
+        new_item.save()
+    return HttpResponse('')
+
+def delete_json_task(request, id):
+    user = request.user
+    task = ToDoList.objects.get(pk=id)
+
+    if user.id == task.user_id and request.method == 'DELETE':
+        task.delete()
+        
+    return HttpResponse('')

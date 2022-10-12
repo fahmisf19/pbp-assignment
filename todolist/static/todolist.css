@@ -65,12 +65,12 @@
 align-items: center;
 }
 
-.our_solution_category {
+.container-content {
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 }
-.our_solution_category .cards-box {
+.container-content .cards-box {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -216,17 +216,17 @@ object-fit: contain;
   top: 0;
 }
 
-.our_solution_category {
+.container-content {
   width: 100%;
   margin: 0 auto;
 }
 
-.our_solution_category .cards-box {
+.container-content .cards-box {
   flex: auto;
 }
 }
 @media only screen and (min-width: 768px) {
-.our_solution_category .cards-box {
+.container-content .cards-box {
   flex: 1;
 }
 }
@@ -235,7 +235,7 @@ object-fit: contain;
   position: relative;
   top: -3rem;
 }
-.our_solution_category {
+.container-content {
   width: 50%;
   margin: 0 auto;
 }
