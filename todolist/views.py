@@ -29,7 +29,7 @@ def show_todolist(request):
 def show_create_task(request):
     return render(request, 'create-task.html')
 
-@login_required(login_url="/todolist/login")s
+@login_required(login_url="/todolist/login")
 def create_task(request):
     if request.method == "POST":
         x = request.POST.get('title')
