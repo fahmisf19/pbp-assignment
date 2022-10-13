@@ -25,9 +25,11 @@ def show_todolist(request):
     }
     return render(request, 'todolist.html', context)
 
+@login_required(login_url="/todolist/login")
 def show_create_task(request):
     return render(request, 'create-task.html')
 
+@login_required(login_url="/todolist/login")s
 def create_task(request):
     if request.method == "POST":
         x = request.POST.get('title')
@@ -36,6 +38,7 @@ def create_task(request):
         new_item.save()
         return HttpResponseRedirect('/todolist/')
 
+@login_required(login_url="/todolist/login")
 def finish_task(request, i):
     obj = get_object_or_404(ToDoList, id=i)
     if request.method == 'POST':
@@ -45,6 +48,7 @@ def finish_task(request, i):
 
     return render(request, 'todolist.html', {'obj' : obj})
 
+@login_required(login_url="/todolist/login")
 def delete_task(request, i):
     y = ToDoList.objects.get(id= i)
     y.delete()
@@ -89,6 +93,7 @@ def show_todolist_json(request):
     tasks = ToDoList.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', tasks), content_type='application/json')
 
+@login_required(login_url="/todolist/login")
 def add_json_task(request):
     if request.method == "POST":
         x = request.POST.get('title')
@@ -97,6 +102,7 @@ def add_json_task(request):
         new_item.save()
     return HttpResponse('')
 
+@login_required(login_url="/todolist/login")
 def delete_json_task(request, id):
     user = request.user
     task = ToDoList.objects.get(pk=id)
