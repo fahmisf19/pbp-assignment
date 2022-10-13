@@ -93,6 +93,19 @@
     })
     }
     
+    function deleteTask(id) {
+      $.ajax({
+            type: 'DELETE',
+            url: `/todolist/delete/${id}/`,
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+            },
+            success: function(data) {
+                $.get("/todolist/json/", showTask);
+            },
+        });
+    }
+    
     $(document).ready( function(){
       $.get("/todolist/json/", showTask);
 
